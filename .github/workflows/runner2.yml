@@ -1,0 +1,13 @@
+name: Runner2 Test
+
+on: [push]
+
+jobs:
+  test-runner:
+    runs-on: [self-hosted, "self-hosted 1"]  # Ensures it runs on Runner 2
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run a test command on Runner 2
+        run: echo "Hello from self-hosted Runner 2!"
