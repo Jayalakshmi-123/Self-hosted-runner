@@ -1,0 +1,13 @@
+name: Runner1 Test
+
+on: [push]  # Trigger workflow on every push
+
+jobs:
+  test-runner:
+    runs-on: self-hosted  # Use self-hosted runner
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run a test command
+        run: echo "Hello from self-hosted runner!"
